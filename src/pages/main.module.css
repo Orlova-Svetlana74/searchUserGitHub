@@ -28,7 +28,7 @@
 }
 
 .button {
-    background-color: #181d00f4; /* Green */
+    background-color: #181d00f4; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -48,7 +48,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block; 
-    background-color: #f6f6f3e1; /* Green */
+    background-color: #f6f6f3e1; 
 }
 .popup {
     text-align: center;

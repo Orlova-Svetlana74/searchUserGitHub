@@ -39,7 +39,7 @@ const UserSearch: React.FC = () => {
       );
       setUsers(response.data.items);
     } catch (error) {
-      console.error(error);
+      console.error('Ошибка при получении данных', error);
     }
   };
 
@@ -71,8 +71,10 @@ const UserSearch: React.FC = () => {
     if (selectedUser) {
       return (
         <div>
-          <h2 className={s.popup}>Пользователь:    {selectedUser.login}</h2>
-          <h2 className={s.popup}>Количество репозиториев:   {repositories.length}</h2>
+          <h2 className={s.popup}>USER: {selectedUser.login}</h2>
+          <h2 className={s.popup}>
+            Number of repositories: {repositories.length}
+          </h2>
         </div>
       );
     }
@@ -80,12 +82,12 @@ const UserSearch: React.FC = () => {
   };
   return (
     <div>
-      <h1 className={s.tytle_user}>Поиск пользователя GitHub</h1>
+      <h1 className={s.tytle_user}>Search for a GitHub user</h1>
       <div className={s.search_user}>
         <form className={s.form_user} onSubmit={handleSubmitDesc}>
           <input
             className={s.input_user}
-            placeholder="введите логин"
+            placeholder="Enter login GitHub"
             type="text"
             value={login}
             onChange={handleChange}
@@ -122,5 +124,4 @@ const UserSearch: React.FC = () => {
     </div>
   );
 };
-
 export default UserSearch;
